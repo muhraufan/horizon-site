@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Horizon: prayer times in the sky you're under</title>
+<meta name="description" content="Horizon is a prayer times app for iPhone that lives in the real sky above you, with the real weather. Calm, private, and made to match your community.">
+<meta property="og:title" content="Horizon: prayer times in the sky you're under">
+<meta property="og:description" content="The real sky for your place and hour, with the real weather, and the next prayer resting quietly on it.">
+<meta property="og:image" content="https://horizon.muhraufan.com/assets/icon.png">
+<link rel="icon" href="assets/icon.png">
+<link rel="apple-touch-icon" href="assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=8">
+</head>
+<body>
+<header class="bar">
+  <a class="brand" href="#"><img src="assets/icon.png" alt=""><span>Horizon</span></a>
+  <span class="pill dark small off" aria-disabled="true">Beta opening soon</span>
+</header>
+
+<main>
+  <div class="column hero">
+    <img class="icon" src="assets/icon.png" alt="Horizon's icon: a window onto a glowing horizon">
+    <p class="lede"><b>Horizon</b> is a prayer times app that lives in <b>the sky you're under.</b> The real sky for your place and hour, with the real weather, and <b>the next prayer resting quietly on it.</b></p>
+    <p class="sub">Free for iPhone. Coming before Ramadan.</p>
+    <div class="actions">
+      <span class="pill dark off" aria-disabled="true">Beta opening soon</span>
+      <a class="pill light" href="#sky">Drag the sun</a>
+    </div>
+    <p class="fine">For iPhone with iOS 18 or later. No account, no ads.</p>
+  </div>
+
+  <div class="grid-wide" id="sky">
+    <div class="demo" id="demo" aria-label="A sky you can drag through the day">
+      <canvas id="sky-canvas"></canvas>
+      <div class="readout">
+        <div class="place">Tokyo · Today</div>
+        <div class="hijri" id="hijri">Prayer times for Japan</div>
+        <div class="clock" id="clock">15:04</div>
+        <div class="period" id="period">Asr</div>
+      </div>
+      <div class="next"><span><span class="dot"></span><span id="next">Maghrib 16:44</span></span><span class="left" id="left">in 1h 40m</span></div>
+    </div>
+  </div>
+  <div class="column try">
+    <p class="body"><b>Try it.</b> Drag the sun across the day, and the sky follows: indigo before Fajr, high white at Dhuhr, amber Asr, ember Maghrib. In the app it's drawn live, with your real weather.</p>
+  </div>
+
+  <section class="grid-wide" id="shape">
+    <p class="lede"><b>Your day changes shape with the seasons.</b> Most prayer apps show it as a table. Horizon lets you see it.</p>
+    <div class="stories">
+
+      <div class="tile" id="seasons">
+        <div class="stage">
+        <div class="seasons">
+          <div class="season dec">
+            <div class="month">Tokyo, December</div>
+            <svg viewBox="0 0 120 40" aria-hidden="true"><path d="M2 38 C 30 34, 40 10, 60 10 S 90 34, 118 38" fill="none" stroke="rgba(251,250,246,.75)" stroke-width="1"/><line x1="2" y1="28" x2="118" y2="28" stroke="rgba(251,250,246,.45)" stroke-dasharray="0.1 4" stroke-linecap="round"/><circle cx="92" cy="33" r="3" fill="#e07a1f"/></svg>
+            <div class="isha"><small>Isha</small>17:55</div>
+          </div>
+          <div class="season jun">
+            <div class="month">Tokyo, June</div>
+            <svg viewBox="0 0 120 40" aria-hidden="true"><path d="M2 38 C 22 30, 34 2, 60 2 S 98 30, 118 38" fill="none" stroke="rgba(251,250,246,.75)" stroke-width="1"/><line x1="2" y1="28" x2="118" y2="28" stroke="rgba(251,250,246,.45)" stroke-dasharray="0.1 4" stroke-linecap="round"/><circle cx="106" cy="34" r="3" fill="#e07a1f"/></svg>
+            <div class="isha"><small>Isha</small>20:40</div>
+          </div>
+        </div></div>
+        <p class="body"><b>See the season, not just the time.</b> In Tokyo, Isha comes around 17:55 in December and 20:40 in June. The arc of the day stretches and shrinks with it, so you feel that Isha comes early now before you read the number.</p>
+      </div>
+
+      <div class="tile" id="weather">
+        <div class="stage">
+        <div class="card rain" aria-hidden="true">
+          <div style="font-size:14px;font-weight:500;opacity:.85">Tokyo · Sat 7 Nov</div>
+          <div style="font-size:64px;font-weight:300;letter-spacing:-.02em;line-height:1.1;margin-top:10px">11:52</div>
+          <div style="font-size:20px;font-weight:500">Dhuhr</div>
+          <i class="drop" style="left:62%;top:28%;width:12px;height:12px"></i><i class="run" style="left:calc(62% + 5px);top:calc(28% - 46px);height:44px"></i>
+          <i class="drop" style="left:18%;top:62%;width:9px;height:9px"></i>
+          <i class="drop" style="left:80%;top:56%;width:14px;height:14px"></i><i class="run" style="left:calc(80% + 6px);top:calc(56% - 60px);height:58px"></i>
+          <i class="drop" style="left:44%;top:74%;width:7px;height:7px"></i>
+          <i class="drop" style="left:90%;top:20%;width:8px;height:8px"></i>
+          <div class="line">11° · Rain in 8 min
+            <div class="rainbar"><span style="height:2px"></span><span style="height:3px"></span><span style="height:5px"></span><span style="height:8px"></span><span style="height:11px"></span><span style="height:13px"></span><span style="height:12px"></span><span style="height:10px"></span><span style="height:8px"></span><span style="height:6px"></span><span style="height:4px"></span><span style="height:3px"></span></div>
+          </div>
+        </div></div>
+        <p class="body"><b>The real weather, in the real sky.</b> Clouds follow each hour's actual cloud cover, from a few drifting patches to overcast. When it rains, drops rest on the glass and slide down. Tap the temperature for the day's curve, with each prayer marked on it: 15° at Maghrib.</p>
+      </div>
+
+      <div class="tile" id="hold">
+        <div class="stage">
+        <div class="card hold" aria-hidden="true">
+          <div class="row passed"><span class="dot"></span><span>Fajr</span><span>04:39</span><span>9° · Clear</span></div>
+          <div class="row passed"><span class="dot"></span><span>Sunrise</span><span>06:06</span><span>11° · Clear</span></div>
+          <div class="row passed"><span class="dot"></span><span>Dhuhr</span><span>11:26</span><span>16° · Clear</span></div>
+          <div class="row on"><span class="dot"></span><span>Asr</span><span>14:21</span><span>17° · Clear</span></div>
+          <div class="row next"><span class="dot"></span><span>Maghrib</span><span>16:44</span><span>15° · Cloudy</span></div>
+          <div class="row"><span class="dot"></span><span>Isha</span><span>18:05</span><span>13° · Rain</span></div>
+        </div></div>
+        <p class="body"><b>Hold for the whole day.</b> Hold the next prayer and all six moments open above your thumb, each with its weather. Slide through them and the sky goes there with you. Swipe the sky for tomorrow, or hold the date to look ten days ahead.</p>
+      </div>
+
+      <div class="tile" id="method">
+        <div class="stage">
+        <div class="card sheet-pic" aria-hidden="true">
+          <div class="sheet">
+            <div class="eyebrow">Prayer times for Indonesia</div>
+            <div class="title">Following Kemenag, the method used in Indonesia.</div>
+            <div class="btn">Looks good</div>
+            <div class="note">Mosques can differ. <b>Change method</b></div>
+          </div>
+        </div></div>
+        <p class="body"><b>Times that match your community.</b> There's no single right way to calculate prayer times, so Horizon starts from your country's method, says which one and why, and makes it easy to change. It only says "Recommended" where it has checked against the official timetable.</p>
+      </div>
+
+      <div class="tile" id="glance">
+        <div class="stage">
+        <div class="card lock" aria-hidden="true">
+          <div class="date">Wed 4 November</div>
+          <div class="inline">☾ Isha 18:05</div>
+          <div class="big">16:58</div>
+          <div class="activity">
+            <div class="top">
+              <div><div class="name"><i></i>Isha</div><div class="time">18:05</div></div>
+              <div class="left">in 1 hr, 7 min<small>Tokyo · 14° · Clear</small></div>
+            </div>
+            <div class="glass"><b></b></div>
+          </div>
+        </div></div>
+        <p class="body"><b>The next prayer, at a glance.</b> Widgets for your Home Screen and Lock Screen, and a Live Activity that fills toward the next prayer like an hourglass, drawn over the sky as it will be at that prayer. Most days you won't need to open the app.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="grid-wide" id="private">
+    <p class="lede"><b>Free where it matters.</b> Most prayer apps I tried showed ads, wanted an account, or charged for the basics. <b>Horizon has none of that.</b></p>
+    <div class="numbers">
+      <div class="number"><div class="big">0</div><div class="what"><b>accounts to make.</b> Open it and it works.</div></div>
+      <div class="number"><div class="big">0</div><div class="what"><b>ads, trackers or analytics.</b> Not now, not later.</div></div>
+      <div class="number"><div class="big">6</div><div class="what"><b>prayer times a day,</b> worked out on your iPhone, offline.</div></div>
+    </div>
+    <p class="fine note">Your location goes to Apple only to name your city and fetch the weather. Choose a city yourself and Horizon never asks where you are. <a href="privacy.html">Read the privacy policy</a>.</p>
+  </section>
+
+  <section class="grid-wide" id="details">
+    <p class="lede">And the details nobody asked for.</p>
+    <div class="grid3">
+      <div class="item"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 14.5A7.5 7.5 0 0 1 9.5 5a7.5 7.5 0 1 0 9.5 9.5z"/></svg></span><h3>The real moon</h3><p>Below the horizon the sun turns into tonight&rsquo;s moon, in its real phase.</p></div>
+      <div class="item"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg></span><h3>Qibla on the sky</h3><p>A beam toward Makkah. Face it and the sky itself warms, with one soft tap.</p></div>
+      <div class="item"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="3"/><path d="M4 10h16M8.5 3v4M15.5 3v4"/></svg></span><h3>A calendar that follows the moon</h3><p>Hijri dates under every day. Ramadan is a ribbon of light, and the Eids bloom.</p></div>
+      <div class="item"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg></span><h3>A gentle chime</h3><p>Reminders with a soft struck bell made for Horizon. No alarms, no adhan blasting.</p></div>
+      <div class="item"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 1.5M10 2.5h4"/></svg></span><h3>Your mosque&rsquo;s minutes</h3><p>Nudge any prayer by a few minutes to match the timetable on your mosque&rsquo;s wall.</p></div>
+      <div class="item"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17h18"/><path d="M6 17a6 6 0 0 1 12 0"/><path d="M12 7v2"/></svg></span><h3>Hanafi or Standard Asr</h3><p>And the high-latitude rules for long summer days in the north.</p></div>
+      <div class="item"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="12" r="6.5"/><path d="M17.5 10.5h2v3h-2M11 8.5V12"/></svg></span><h3>Sounds like a watch</h3><p>Scrolling through days gives a tiny, dry click, like the crown of a fine watch.</p></div>
+      <div class="item"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3l18 18"/><path d="M8.5 8.6A5 5 0 0 0 7 18h10.5M12.2 6.1A5 5 0 0 1 17 9.5a4 4 0 0 1 3.4 6"/></svg></span><h3>Works offline</h3><p>Times need no connection. The forecast is kept for three days.</p></div>
+      <div class="item"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M10 9v6M14 9v6"/></svg></span><h3>Reduce Motion, respected</h3><p>Every movement has a calm version that fades instead.</p></div>
+    </div>
+  </section>
+
+  <section class="grid-wide" id="coming">
+    <p class="lede"><b>Coming next.</b> Planned, not promised.</p>
+    <div class="grid3">
+      <div class="item"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 16h18"/><path d="M7 16a5 5 0 0 1 10 0"/><path d="M12 5v2.5M5.6 8.6l1.6 1.6M18.4 8.6l-1.6 1.6"/><path d="M6 19.5h12"/></svg></span><h3>Ramadan</h3><p>Iftar and suhoor countdowns, imsak, a suhoor alarm that rings through silent mode, and a Ramadan sky.</p></div>
+      <div class="item"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg></span><h3>Your language</h3><p>Indonesian, Malay, Turkish and Japanese, read by people who speak them.</p></div>
+      <div class="item"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 13.5c2.2-5 6.8-5 9 0"/><path d="M12.5 13.5c2.2-5 6.8-5 9 0"/><path d="M2.5 17h19"/><circle cx="7" cy="9.3" r="1.2"/><circle cx="17" cy="9.3" r="1.2"/></svg></span><h3>Another sky</h3><p>Keep one more place, like a parent's city, and see its sky and its next prayer beside yours.</p></div>
+      <div class="item"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7c3 3 6 3 9 0s6-3 9 0"/><path d="M3 12c3 3 6 3 9 0s6-3 9 0"/><path d="M3 17c3 3 6 3 9 0s6-3 9 0"/></svg></span><h3>The year, as light</h3><p>Every day of the year at once, so you can watch each prayer drift with the seasons.</p></div>
+      <div class="item"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="6" width="11" height="12" rx="3"/><path d="M9 6l.7-3h4.6l.7 3M9 18l.7 3h4.6l.7-3"/><path d="M12 9.5V12l1.8 1.2"/></svg></span><h3>Apple Watch</h3><p>The next prayer on your wrist, and one firm tap when it's time.</p></div>
+      <div class="item"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></span><h3>Gift Horizon Pro</h3><p>Send Pro to family or a friend for Eid, wrapped in the sky of their own city.</p></div>
+    </div>
+  </section>
+
+  <section class="column" id="maker">
+    <p class="lede">Made in Tokyo by <span class="avatar"><img src="assets/raufan.jpg" alt="" width="34" height="34"></span> <b>Raufan</b>, a product designer who wanted to feel the shape of the day, not read it off a table. It's early, and I'd love to build the rest with you.</p>
+  </section>
+
+  <section class="column faq" id="faq">
+    <details><summary>Is it free?</summary><p>Yes. Prayer times, reminders, the Qibla, the calendar, the live sky with today's weather and the Home Screen widgets are free, and always will be. Horizon Pro adds the Lock Screen widgets, the Live Activity, the forecast for the days ahead and a heads-up before each prayer. During Ramadan, Pro is open to everyone.</p></details>
+    <details><summary>Why is there a Pro at all?</summary><p>So Horizon can stay independent and ad-free. Pro pays for the weather data, Apple's developer fees, and the time to keep making it better. Prayer itself never costs anything.</p></details>
+    <details><summary>How much is Pro?</summary><p>$3.99 a month or $19.99 a year, each with a week free, or $59.99 once. Family Sharing is included. Prices vary by country.</p></details>
+    <details><summary>Which iPhones does it run on?</summary><p>Any iPhone with iOS 18 or later. On iOS 26 it uses Liquid Glass.</p></details>
+    <details><summary>Which calculation methods does it support?</summary><p>Muslim World League, ISNA, the Moonsighting Committee, Umm al-Qura, Egyptian, Karachi, Dubai, Qatar, Kuwait, Kemenag, JAKIM, MUIS, Diyanet, Tehran and more, with Standard or Hanafi Asr and per-prayer offsets.</p></details>
+    <details><summary>Why does it ask for my location?</summary><p>To work out your prayer times and the Qibla, on your iPhone. You can choose a city instead and never be asked.</p></details>
+    <details><summary>What does it know about me?</summary><p>Only your settings, kept on your iPhone. There's no account and nothing is sent to me. Apple receives your location to name your city and get the weather. <a href="privacy.html">The privacy policy</a> has every detail.</p></details>
+  </section>
+
+  <section class="column ending" id="beta">
+    <p class="lede"><b>The sky you pray under.</b> The beta opens soon, so you can help shape it before Ramadan.</p>
+    <div class="actions"><span class="pill dark off" aria-disabled="true">Beta opening soon</span></div>
+    <p class="fine">Free, through TestFlight. iPhone with iOS 18 or later.</p>
+  </section>
+</main>
+
+<footer class="column foot">
+  <span>Horizon · © 2026 Muhammad Raufan Yusup</span>
+  <span class="links"><a href="privacy.html">Privacy</a><a href="https://muhraufan.com">muhraufan.com</a></span>
+</footer>
+
+<script>
+// A sketch of the app's sky: the same colours at each prayer, the same arc, a sun you can drag.
+(() => {
+  const times = { Fajr: 279, Sunrise: 366, Dhuhr: 686, Asr: 861, Maghrib: 1004, Isha: 1085 };
+  const order = ["Fajr", "Sunrise", "Dhuhr", "Asr", "Maghrib", "Isha"];
+  const hex = h => [parseInt(h.slice(1, 3), 16), parseInt(h.slice(3, 5), 16), parseInt(h.slice(5, 7), 16)];
+  const looks = {
+    night:   { top: "#070A17", mid: "#0E1430", low: "#1C2247", ink: 0 },
+    fajr:    { top: "#141A3D", mid: "#3A3F72", low: "#B88A8F", ink: 0 },
+    sunrise: { top: "#7E9CC0", mid: "#B9C4CC", low: "#F0D2AE", ink: 1 },
+    morning: { top: "#A9C6DE", mid: "#E6DEC8", low: "#F5DFA8", ink: 1 },
+    dhuhr:   { top: "#9FC3E3", mid: "#DCE9F2", low: "#FBFBF7", ink: 1 },
+    asr:     { top: "#93ACB8", mid: "#D9B98A", low: "#EFA95A", ink: 1 },
+    maghrib: { top: "#2B2A4C", mid: "#A2483F", low: "#F0803C", ink: 0 },
+  };
+  const t = times;
+  const keys = [
+    [0, "night"], [t.Fajr - 30, "night"], [t.Fajr + 15, "fajr"], [t.Sunrise - 20, "fajr"], [t.Sunrise + 5, "sunrise"],
+    [t.Sunrise + 70, "morning"], [t.Dhuhr - 60, "morning"], [t.Dhuhr - 10, "dhuhr"], [t.Asr - 40, "dhuhr"], [t.Asr + 15, "asr"],
+    [t.Maghrib - 45, "asr"], [t.Maghrib - 2, "maghrib"], [t.Maghrib + 25, "maghrib"], [t.Isha + 15, "night"], [1440, "night"],
+  ];
+  const ease = x => x * x * (3 - 2 * x);
+  function look(m) {
+    let i = 0;
+    while (i < keys.length - 2 && m > keys[i + 1][0]) i++;
+    const [m0, a] = keys[i], [m1, b] = keys[i + 1];
+    const f = m1 > m0 ? ease(Math.min(Math.max((m - m0) / (m1 - m0), 0), 1)) : 0;
+    const mix = (k) => { const x = hex(looks[a][k]), y = hex(looks[b][k]); return x.map((v, j) => Math.round(v + (y[j] - v) * f)); };
+    return { top: mix("top"), mid: mix("mid"), low: mix("low"), ink: looks[a].ink + (looks[b].ink - looks[a].ink) * f };
+  }
+
+  const demo = document.getElementById("demo"), canvas = document.getElementById("sky-canvas");
+  const ctx = canvas.getContext("2d");
+  const clock = document.getElementById("clock"), period = document.getElementById("period");
+  const next = document.getElementById("next"), left = document.getElementById("left");
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  // Start at the time it is in Tokyo now.
+  const now = new Date(), tokyo = (now.getUTCHours() + 9) % 24 * 60 + now.getUTCMinutes();
+  let minute = tokyo, shown = reduce ? tokyo : times.Sunrise - 60;
+
+  const pad = n => String(n).padStart(2, "0");
+  const hm = m => `${pad(Math.floor(m / 60) % 24)}:${pad(Math.floor(m % 60))}`;
+  const rgb = c => `rgb(${c[0]},${c[1]},${c[2]})`;
+
+  let W = 0, H = 0, dpr = 1;
+  function size() {
+    dpr = window.devicePixelRatio || 1;
+    W = demo.clientWidth; H = demo.clientHeight;
+    canvas.width = W * dpr; canvas.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  const margin = 24;
+  const horizonY = () => H - 92;
+  const amp = () => Math.min(64, H * 0.12);
+  const xOf = m => margin + (W - margin * 2) * m / 1440;
+  const yOf = m => horizonY() - amp() * Math.cos(Math.PI * (m - times.Dhuhr) / (times.Maghrib - times.Sunrise));
+  const stars = Array.from({ length: 40 }, (_, i) => [((i * 97) % 100) / 100, ((i * 53) % 62) / 100, 0.4 + ((i * 31) % 10) / 16]);
+
+  function draw() {
+    const m = shown, L = look(m);
+    const g = ctx.createLinearGradient(0, 0, 0, H);
+    g.addColorStop(0, rgb(L.top)); g.addColorStop(0.55, rgb(L.mid)); g.addColorStop(0.86, rgb(L.low)); g.addColorStop(1, rgb(L.low));
+    ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+
+    const sunY = yOf(m), night = Math.min(Math.max((sunY - horizonY() - 4) / 18, 0), 1);
+    // Stars come out once the sun is down.
+    if (night > 0) {
+      ctx.fillStyle = `rgba(251,250,246,${0.75 * night})`;
+      for (const [sx, sy, r] of stars) { ctx.beginPath(); ctx.arc(sx * W, sy * H, r, 0, 7); ctx.fill(); }
+    }
+    // A soft glow where the sun is, low in the sky by day.
+    if (night < 1) {
+      const glow = ctx.createRadialGradient(xOf(m), sunY, 0, xOf(m), sunY, 220);
+      glow.addColorStop(0, `rgba(255,216,160,${0.32 * (1 - night)})`); glow.addColorStop(1, "rgba(255,216,160,0)");
+      ctx.fillStyle = glow; ctx.fillRect(0, 0, W, H);
+    }
+
+    const ink = L.ink > 0.5 ? [16, 20, 28] : [251, 250, 246];
+    demo.style.color = rgb(ink);
+    const inkA = a => `rgba(${ink[0]},${ink[1]},${ink[2]},${a})`;
+
+    // The dotted horizon and the day's thread.
+    ctx.setLineDash([0.1, 5]); ctx.lineCap = "round"; ctx.strokeStyle = inkA(0.45); ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(margin, horizonY()); ctx.lineTo(W - margin, horizonY()); ctx.stroke(); ctx.setLineDash([]);
+    const line = ctx.createLinearGradient(margin, 0, W - margin, 0);
+    line.addColorStop(0, inkA(0)); line.addColorStop(0.1, inkA(0.6)); line.addColorStop(0.9, inkA(0.6)); line.addColorStop(1, inkA(0));
+    ctx.strokeStyle = line; ctx.beginPath();
+    for (let i = 0; i <= 200; i++) { const mm = i / 200 * 1440; i ? ctx.lineTo(xOf(mm), yOf(mm)) : ctx.moveTo(xOf(mm), yOf(mm)); }
+    ctx.stroke();
+
+    // Prayers as marks, the next one in the accent.
+    const upcoming = order.find(p => times[p] > m) || "Fajr";
+    for (const p of order) {
+      const x = xOf(times[p]), y = yOf(times[p]);
+      if (p === upcoming) { ctx.fillStyle = "#e07a1f"; ctx.beginPath(); ctx.arc(x, y, 3.5, 0, 7); ctx.fill(); continue; }
+      ctx.strokeStyle = inkA(0.85);
+      if (p === "Sunrise") { ctx.beginPath(); ctx.arc(x, y, 2.5, 0, 7); ctx.stroke(); continue; }
+      const d = (yOf(times[p] + 2) - yOf(times[p] - 2)) / (xOf(4) - xOf(0)), n = Math.hypot(1, d);
+      ctx.beginPath(); ctx.moveTo(x + d / n * 4, y - 1 / n * 4 * -1); ctx.lineTo(x - d / n * 4, y + 1 / n * 4 * -1); ctx.stroke();
+    }
+
+    // The sun, or the moon below the horizon.
+    const sx = xOf(m);
+    const bloom = ctx.createRadialGradient(sx, sunY, 0, sx, sunY, 34);
+    const warm = night > 0.5 ? "196,210,240" : "255,216,160";
+    bloom.addColorStop(0, `rgba(${warm},0.55)`); bloom.addColorStop(1, `rgba(${warm},0)`);
+    ctx.fillStyle = bloom; ctx.beginPath(); ctx.arc(sx, sunY, 34, 0, 7); ctx.fill();
+    ctx.fillStyle = night > 0.5 ? "#eef2ff" : "#fffdf7"; ctx.beginPath(); ctx.arc(sx, sunY, 5.5, 0, 7); ctx.fill();
+
+    // The readout.
+    clock.textContent = hm(m);
+    const passed = order.filter(p => times[p] <= m);
+    const current = passed.length ? passed[passed.length - 1] : "Isha";
+    period.textContent = current === "Sunrise" ? "Morning" : current;
+    const nextTime = upcoming === "Fajr" && m >= times.Fajr ? times.Fajr + 1440 : times[upcoming];
+    next.textContent = `${upcoming} ${hm(times[upcoming])}`;
+    const wait = Math.max(Math.round(nextTime - m), 0);
+    left.textContent = wait >= 60 ? `in ${Math.floor(wait / 60)}h ${pad(wait % 60)}m` : `in ${wait} min`;
+  }
+
+  // The sun glides to where it's wanted on a soft spring, and tracks the finger once held.
+  let velocity = 0, dragging = false, last = performance.now();
+  function frame(now) {
+    const dt = Math.min((now - last) / 1000, 0.05); last = now;
+    if (!dragging) {
+      const k = 60, c = 2 * Math.sqrt(k);
+      velocity += (k * (minute - shown) - c * velocity) * dt;
+      shown += velocity * dt;
+    }
+    draw();
+    requestAnimationFrame(frame);
+  }
+  function at(e) { const r = demo.getBoundingClientRect(); return Math.min(Math.max((e.clientX - r.left - margin) / (r.width - margin * 2), 0), 1) * 1439; }
+  demo.addEventListener("pointerdown", e => { dragging = true; demo.setPointerCapture(e.pointerId); minute = shown = at(e); });
+  demo.addEventListener("pointermove", e => { if (dragging) minute = shown = at(e); });
+  const up = () => { dragging = false; velocity = 0; };
+  demo.addEventListener("pointerup", up); demo.addEventListener("pointercancel", up);
+  addEventListener("resize", () => { size(); draw(); });
+  size();
+  if (reduce) { draw(); } else {
+    // The first time it's seen, the sun travels from dawn to now.
+    const io = new IntersectionObserver(es => { if (es[0].isIntersecting) { requestAnimationFrame(frame); io.disconnect(); } }, { threshold: 0.3 });
+    io.observe(demo); draw();
+  }
+})();
+</script>
+</body>
+</html>
