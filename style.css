@@ -251,3 +251,21 @@ section .lede { margin-bottom: 40px; }
   .lede { font-size: 38px; }
   .demo { height: 640px; }
 }
+
+/* Email me at launch: a quiet second way in, under the beta button. */
+.launch { margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--line); }
+.launch .field { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+.launch input[type=email] { flex: 1 1 220px; min-width: 0; height: 44px; padding: 0 16px; border-radius: 22px; border: 1px solid var(--line);
+  background: #fff; font: inherit; font-size: 16px; color: var(--ink); outline: none; transition: border-color 0.15s ease, box-shadow 0.15s ease; }
+.launch input[type=email]:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(224, 122, 31, 0.18); }
+.launch button { height: 44px; border-radius: 22px; padding: 0 20px; }
+.launch button:disabled { opacity: 0.6; cursor: default; }
+.launch[data-state=error] .fine { color: #b3261e; }
+.launch[data-state=done] .fine { color: var(--ink); margin-top: 16px; }
+.hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.aside { font-size: 15px; margin: 16px 0 0; }
+.aside a { color: var(--ink); text-decoration: none; font-weight: 500; }
+.aside a span { display: inline-block; transition: transform 0.15s ease; }
+@media (hover: hover) and (pointer: fine) { .aside a:hover span { transform: translateX(2px); } }
+/* In-page links glide to their section; Reduce Motion jumps instead. */
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
