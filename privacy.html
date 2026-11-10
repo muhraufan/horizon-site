@@ -19,7 +19,7 @@
 
 <main class="column prose">
   <p class="lede"><b>Privacy.</b> Horizon has no account, no ads and no analytics. It doesn't track you, and it doesn't sell or share anything about you. <b>This page says exactly what it does with your information,</b> in plain words.</p>
-  <p class="fine">Updated 9 November 2026. Horizon is made by Muhammad Raufan Yusup, an independent developer in Japan.</p>
+  <p class="fine">Updated 10 November 2026. Horizon is made by Muhammad Raufan Yusup, an independent developer in Japan.</p>
 
   <h2>The short version</h2>
   <ul>
@@ -27,6 +27,7 @@
     <li>Your settings stay on your iPhone.</li>
     <li>Two things go to Apple, and only to Apple: your location, to name your city and to get the weather. Neither is linked to you by Horizon.</li>
     <li>Nothing comes to me unless you send me feedback, and then only what the feedback page shows you.</li>
+    <li>If you give someone a year of Pro, Horizon's gift server keeps the purchase's transaction ID beside the code it gave you, and nothing about either of you.</li>
   </ul>
 
   <h2>Location</h2>
@@ -44,6 +45,11 @@
 
   <h2>Purchases</h2>
   <p>Horizon Pro is bought through the App Store. Apple handles the payment, and Horizon never sees your payment details. Horizon checks your purchase with Apple on your iPhone. Family Sharing works the same way.</p>
+
+  <h2 id="gifts">If you give a year of Pro</h2>
+  <p>When you buy a gift, Horizon sends Apple's signed record of the purchase to Horizon's gift server at horizon.muhraufan.com, which runs on Cloudflare. The server checks Apple's signature and hands back one gift code from a batch made in App Store Connect, with a short link to it.</p>
+  <p>The server keeps only the purchase's transaction ID, the code and link it gave out, and when. That stops one purchase being used for two codes. It doesn't receive your name, the recipient's name, your message or your Apple Account. Those stay on your iPhone, on the card you send. Cloudflare handles the requests under <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare's Privacy Policy</a>.</p>
+  <p>Whoever redeems the code does it with Apple, in the App Store or in Horizon, so the server never learns who received it.</p>
 
   <h2>If you send feedback</h2>
   <p>Horizon's feedback page sends your note only when you tap Send. It includes:</p>
