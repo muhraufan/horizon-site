@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-itunes-app" content="app-id=6830726379">
 <title>Horizon: prayer times in the sky you’re under</title>
 <meta name="description" content="Horizon is a prayer times app for iPhone, drawn on the live sky above you with your real weather. Free, with no ads and no account.">
 <meta property="og:title" content="Horizon: prayer times in the sky you’re under">
@@ -13,24 +14,23 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=11">
+<link rel="stylesheet" href="style.css?v=14">
 </head>
 <body>
 <header class="bar">
   <a class="brand" href="#"><img src="assets/icon.png" alt=""><span>Horizon</span></a>
-  <a class="pill dark small" href="https://testflight.apple.com/join/UGaWKfAn">Join the beta</a>
+  <a class="pill dark small" href="https://apps.apple.com/app/horizon-prayer-times-qibla/id6830726379">Get the app</a>
 </header>
 
 <main>
   <div class="column hero">
     <img class="icon" src="assets/icon.png" alt="Horizon's icon: a window onto a glowing horizon">
     <p class="lede"><b>Horizon</b> is a prayer times app that lives in <b>the sky you’re under.</b> The real sky for your place and hour, with the real weather, and <b>the next prayer resting quietly on it.</b></p>
-    <p class="sub">Free for iPhone. Coming before Ramadan.</p>
+    <p class="sub">Free for iPhone, on the App Store now.</p>
     <div class="actions">
-      <a class="pill dark" href="https://testflight.apple.com/join/UGaWKfAn">Join the beta</a>
+      <a class="store" href="https://apps.apple.com/app/horizon-prayer-times-qibla/id6830726379"><img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us" alt="Download on the App Store" width="120" height="40"></a>
       <a class="pill light" href="#sky">Drag the sun</a>
     </div>
-    <p class="aside"><a href="#launch">Not into betas? Get an email at launch <span aria-hidden="true">&rarr;</span></a></p>
     <p class="fine">For iPhone with iOS 18 or later. No account, no ads.</p>
   </div>
 
@@ -191,20 +191,11 @@
     <details><summary>What does it know about me?</summary><p>Only your settings, kept on your iPhone. There’s no account. Nothing reaches me unless you send feedback, and then only your note, your city and your method, so I can check your times. Apple receives your location to name your city and get the weather. <a href="privacy.html">The privacy policy</a> has every detail.</p></details>
   </section>
 
-  <section class="column ending" id="beta">
-    <p class="lede"><b>The sky you pray under.</b> Join the beta and help shape it before Ramadan.</p>
-    <div class="actions"><a class="pill dark" href="https://testflight.apple.com/join/UGaWKfAn">Join the beta</a></div>
-    <p class="fine">Free, through TestFlight. iPhone with iOS 18 or later.</p>
-    <form class="launch" id="launch" novalidate>
-      <p class="body"><b>Rather wait for the App Store?</b> I&rsquo;ll send you one email when Horizon is out.</p>
-      <div class="field">
-        <label class="hidden" for="launch-email">Email address</label>
-        <input id="launch-email" name="email" type="email" inputmode="email" autocomplete="email" autocapitalize="off" spellcheck="false" placeholder="you@example.com" required>
-        <input class="hidden" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <button class="pill light" type="submit">Email me at launch</button>
-      </div>
-      <p class="fine" id="launch-note" aria-live="polite">Only for this email. Never shared, and deleted once it&rsquo;s sent. <a href="privacy.html#launch">Privacy</a></p>
-    </form>
+  <section class="column ending" id="download">
+    <p class="lede"><b>The sky you pray under.</b> On your iPhone in time for Ramadan.</p>
+    <div class="actions"><a class="store" href="https://apps.apple.com/app/horizon-prayer-times-qibla/id6830726379"><img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us" alt="Download on the App Store" width="120" height="40"></a></div>
+    <p class="fine">Free on the App Store. iPhone with iOS 18 or later.</p>
+    <p class="aside"><a href="https://testflight.apple.com/join/UGaWKfAn">Want new things first? Join the beta <span aria-hidden="true">&rarr;</span></a></p>
   </section>
 </main>
 
@@ -360,35 +351,6 @@
 })();
 </script>
 <!-- Cloudflare Web Analytics: counts visits, with no cookies. The app itself has no analytics. -->
-<script>
-// "Email me at launch": one address to the launch list in the feedback inbox's sheet.
-(() => {
-  const form = document.getElementById("launch"), note = document.getElementById("launch-note");
-  const input = form.elements.email, button = form.querySelector("button");
-  const endpoint = "https://script.google.com/macros/s/AKfycbzw60AAQfEOnHbodMRu7Mw2ppKN4ZD_KpJCv-_c3Fc2UtHHFIOhPKiVFhI7VUch7FK_zQ/exec";
-  const usual = note.innerHTML;
-  const say = (text, state) => { note.textContent = text; form.dataset.state = state || ""; };
-  input.addEventListener("input", () => { if (form.dataset.state === "error") { note.innerHTML = usual; form.dataset.state = ""; } });
-  form.addEventListener("submit", async e => {
-    e.preventDefault();
-    const email = input.value.trim();
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { say("Enter an email address, like name@example.com.", "error"); input.focus(); return; }
-    button.disabled = true; button.textContent = "Sending\u2026";
-    try {
-      // Plain text keeps it a simple request, so the browser sends it without asking first.
-      const response = await fetch(endpoint, { method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" },
-        body: JSON.stringify({ app: "horizon", kind: "launch", email, website: form.elements.website.value, language: navigator.language }) });
-      const result = await response.json();
-      if (!result.ok) throw new Error(result.error);
-      form.querySelector(".field").hidden = true;
-      say(`Thanks. I\u2019ll email ${email} once, when Horizon is on the App Store.`, "done");
-    } catch {
-      button.disabled = false; button.textContent = "Email me at launch";
-      say("That didn\u2019t send. Check your connection and try again.", "error");
-    }
-  });
-})();
-</script>
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "9be67d84eddb4118a91da11cb8d11620"}'></script>
 </body>
 </html>

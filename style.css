@@ -51,7 +51,7 @@ img { display: block; }
 /* Not open yet: shown, but quiet and not pressable. */
 .pill.off { opacity: 0.38; cursor: default; }
 .pill.small { height: 32px; padding: 0 14px; font-size: 13px; border-radius: 16px; }
-.actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 30px; }
+.actions { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-top: 30px; }
 
 /* Column and type */
 .column { max-width: var(--column); margin: 0 auto; padding: 0 16px; }
@@ -252,16 +252,11 @@ section .lede { margin-bottom: 40px; }
   .demo { height: 640px; }
 }
 
-/* Email me at launch: a quiet second way in, under the beta button. */
-.launch { margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--line); }
-.launch .field { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
-.launch input[type=email] { flex: 1 1 220px; min-width: 0; height: 44px; padding: 0 16px; border-radius: 22px; border: 1px solid var(--line);
-  background: #fff; font: inherit; font-size: 16px; color: var(--ink); outline: none; transition: border-color 0.15s ease, box-shadow 0.15s ease; }
-.launch input[type=email]:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(224, 122, 31, 0.18); }
-.launch button { height: 44px; border-radius: 22px; padding: 0 20px; }
-.launch button:disabled { opacity: 0.6; cursor: default; }
-.launch[data-state=error] .fine { color: #b3261e; }
-.launch[data-state=done] .fine { color: var(--ink); margin-top: 16px; }
+/* Apple's App Store badge, unaltered, at the pills' 40px. Buttons beside it take its 8px corners. */
+.store { display: inline-flex; border-radius: 8px; transition: transform 0.15s ease; }
+.store img { display: block; height: 40px; width: auto; }
+.store:active { transform: scale(0.97); }
+.actions:has(.store) .pill { border-radius: 8px; }
 .hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .aside { font-size: 15px; margin: 16px 0 0; }
 .aside a { color: var(--ink); text-decoration: none; font-weight: 500; }
