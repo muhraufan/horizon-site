@@ -232,18 +232,14 @@ section .lede { margin-bottom: 40px; }
 .grid-wide > .lede { max-width: calc(var(--column) - 32px); margin: 0 auto 56px; }
 @media (min-width: 720px) { .grid3 { grid-template-columns: repeat(3, 1fr); gap: 44px 40px; } }
 
-/* Coming next: the same ten items, icons and tags as the app's Coming to Horizon page.
-   Ten fill two rows of five, or five rows of two, never leaving a gap. */
+/* Ready for Ramadan and Coming next: eight items each, in the app's accent. Coming next matches the app's
+   Coming to Horizon page. Eight fill two rows of four, or four rows of two, never leaving a gap. */
 .roadmap .icon { color: var(--accent); }
 .roadmap .icon svg { fill: currentColor; stroke: none; }
-.roadmap h3 { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
-.tag { display: inline-flex; align-items: center; height: 22px; padding: 0 9px; border-radius: 11px; font-size: 12.5px; font-weight: 500; letter-spacing: 0; color: var(--grey); background: rgba(0, 0, 0, 0.06); }
-.tag.soon { color: #c4651a; background: rgba(224, 122, 31, 0.12); }
+.roadmap .icon svg.line { fill: none; stroke: currentColor; stroke-width: 1.5; }
 @media (min-width: 720px) { .grid3.roadmap { grid-template-columns: repeat(2, 1fr); } }
-/* In five narrow columns some titles would wrap their tag and some wouldn't, so every tag sits under its title. */
 @media (min-width: 1100px) {
   .grid3.roadmap { grid-template-columns: repeat(4, 1fr); gap: 44px 28px; }
-  .roadmap h3 { flex-direction: column; align-items: flex-start; }
 }
 
 /* Large screens: bigger sentences and a taller sky. */
